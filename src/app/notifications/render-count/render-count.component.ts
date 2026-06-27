@@ -47,6 +47,7 @@ import { NotificationBatchService } from '../notification-batch.service';
       }
     `,
   ],
+  standalone: false,
 })
 export class RenderCountComponent implements OnInit {
   renderCount = 0;
