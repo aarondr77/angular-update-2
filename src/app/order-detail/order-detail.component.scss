@@ -1,0 +1,76 @@
+.order-detail-page {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.order-detail-header {
+  margin-bottom: 16px;
+}
+
+.order-detail-header-card {
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+.order-status-badge {
+  height: 32px;
+  padding: 0 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 32px;
+  min-width: 88px;
+
+  &.open {
+    background-color: #012169;
+  }
+
+  &.review {
+    background-color: #c8922a;
+  }
+
+  &.filled {
+    background-color: #6c757d;
+  }
+}
+
+.info-panel,
+.timeline-panel,
+.trend-panel {
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+.label {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.value {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 4px 0 16px;
+}
+
+.notes-field {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.loading-state {
+  display: flex;
+  justify-content: center;
+  padding: 48px;
+}

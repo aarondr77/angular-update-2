@@ -1,0 +1,8 @@
+# Platform team owns upgrade infrastructure and CI
+/.devin/                    @platform-team
+/Jenkinsfile                @platform-team
+package.json                @platform-team
+angular.json                @platform-team
+
+# Feature team owns application code
+/src/                       @client-servicing-fe

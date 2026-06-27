@@ -1,0 +1,42 @@
+.dashboard-content {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-toolbar {
+  .spacer {
+    flex: 1 1 auto;
+  }
+  .user-label {
+    margin-right: 16px;
+    font-size: 14px;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+}
+
+.error {
+  color: #e31837;
+}
+
+.order-table {
+  width: 100%;
+}
+
+.clickable-row {
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(1, 33, 105, 0.04);
+  }
+}
+
+mat-chip.open {
+  background: #012169 !important;
+  color: white;
+}

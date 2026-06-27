@@ -1,0 +1,51 @@
+<div class="notifications-page" data-testid="notifications-page">
+  <mat-toolbar color="primary">
+    <span>Notification Settings</span>
+  </mat-toolbar>
+
+  <div class="notifications-content">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Communication Preferences</mat-card-title>
+        <mat-card-subtitle
+          *ngIf="enabledCount$ | async as count"
+          aria-live="polite"
+        >
+          {{ count }} channels enabled
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <fieldset>
+          <legend id="pref-legend">Notification channels</legend>
+          <div
+            *ngFor="let pref of preferences$ | async"
+            class="pref-row"
+            fxLayout="row"
+            fxLayoutAlign="space-between center"
+          >
+            <mat-slide-toggle
+              [id]="'toggle-' + pref.id"
+              [checked]="pref.enabled"
+              (change)="togglePreference(pref.id)"
+              [attr.aria-label]="pref.label"
+              [attr.data-testid]="'pref-' + pref.id"
+            >
+              {{ pref.label }}
+            </mat-slide-toggle>
+          </div>
+        </fieldset>
+
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="openSaveDialog()"
+          data-testid="save-prefs-btn"
+        >
+          Save Preferences
+        </button>
+
+        <app-render-count></app-render-count>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

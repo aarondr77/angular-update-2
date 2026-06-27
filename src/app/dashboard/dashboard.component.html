@@ -1,0 +1,74 @@
+<div class="dashboard" data-testid="dashboard-page">
+  <mat-toolbar color="primary" class="app-toolbar">
+    <span>Trade Blotter</span>
+    <span class="spacer"></span>
+    <span *ngIf="user$ | async as user" class="user-label">{{ user.displayName }}</span>
+    <button mat-button (click)="goToNotifications()" data-testid="nav-notifications">
+      Alerts
+    </button>
+    <button mat-button (click)="logout()" data-testid="logout-btn">Sign Out</button>
+  </mat-toolbar>
+
+  <div class="dashboard-content">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Open Orders</mat-card-title>
+        <mat-card-subtitle *ngIf="count$ | async as count">{{ count }} orders</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="loading$ | async" class="loading">
+          <mat-spinner diameter="40"></mat-spinner>
+        </div>
+        <p *ngIf="error$ | async as error" class="error" role="alert">{{ error }}</p>
+        <table
+          mat-table
+          [dataSource]="(orders$ | async) || []"
+          matSort
+          class="order-table"
+          *ngIf="(loading$ | async) === false"
+        >
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Order ID</th>
+            <td mat-cell *matCellDef="let order">{{ order.id }}</td>
+          </ng-container>
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Symbol</th>
+            <td mat-cell *matCellDef="let order">{{ order.symbol }}</td>
+          </ng-container>
+          <ng-container matColumnDef="side">
+            <th mat-header-cell *matHeaderCellDef>Side</th>
+            <td mat-cell *matCellDef="let order">{{ order.side }}</td>
+          </ng-container>
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let order">
+              <mat-chip-list>
+                <mat-chip [class.open]="order.status === 'Open'">{{ order.status }}</mat-chip>
+              </mat-chip-list>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="desk">
+            <th mat-header-cell *matHeaderCellDef>Desk</th>
+            <td mat-cell *matCellDef="let order">{{ order.desk }}</td>
+          </ng-container>
+          <ng-container matColumnDef="notional">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Notional</th>
+            <td mat-cell *matCellDef="let order">{{ order.notional | currencyCompact }}</td>
+          </ng-container>
+          <ng-container matColumnDef="trader">
+            <th mat-header-cell *matHeaderCellDef>Trader</th>
+            <td mat-cell *matCellDef="let order">{{ order.trader }}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr
+            mat-row
+            *matRowDef="let row; columns: displayedColumns"
+            (click)="onRowClick(row)"
+            class="clickable-row"
+            [attr.data-testid]="'order-row-' + row.id"
+          ></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

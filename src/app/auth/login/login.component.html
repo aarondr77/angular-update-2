@@ -1,0 +1,47 @@
+<div class="login-page" data-testid="login-page">
+  <mat-card class="login-card">
+    <div class="login-card-accent" aria-hidden="true"></div>
+    <mat-card-header class="login-card-header">
+      <mat-card-title>Trade Operations Console</mat-card-title>
+      <mat-card-subtitle>Sign in to access the trade blotter</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="login-card-content">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" aria-label="Login form" class="login-form">
+        <div class="field-group">
+          <label class="field-label" for="login-username">Username</label>
+          <mat-form-field appearance="fill" floatLabel="never" class="login-field">
+            <input
+              matInput
+              id="login-username"
+              formControlName="username"
+              autocomplete="username"
+            />
+          </mat-form-field>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="login-password">Password</label>
+          <mat-form-field appearance="fill" floatLabel="never" class="login-field">
+            <input
+              matInput
+              id="login-password"
+              type="password"
+              formControlName="password"
+              autocomplete="current-password"
+            />
+          </mat-form-field>
+        </div>
+        <p *ngIf="error$ | async as error" class="login-error" role="alert">{{ error }}</p>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="login-submit"
+          [disabled]="form.invalid || (loading$ | async)"
+          data-testid="login-submit"
+        >
+          Sign In
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
