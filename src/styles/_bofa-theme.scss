@@ -1,70 +1,16 @@
 @use '@angular/material' as mat;
 
-@include mat.all-component-typographies();
-@include mat.core();
-
-$bofa-navy: (
-  50: #e3e8f0,
-  100: #b9c5da,
-  200: #8b9fc2,
-  300: #5c79a9,
-  400: #395c96,
-  500: #012169,
-  600: #011d5f,
-  700: #011852,
-  800: #011446,
-  900: #000c30,
-  contrast: (
-    50: rgba(black, 0.87),
-    100: rgba(black, 0.87),
-    200: rgba(black, 0.87),
-    300: white,
-    400: white,
-    500: white,
-    600: white,
-    700: white,
-    800: white,
-    900: white,
-  ),
-);
-
-$bofa-gold: (
-  50: #faf6ed,
-  100: #f0e4c8,
-  200: #e5d09d,
-  300: #d9bc72,
-  400: #d1ad52,
-  500: #c8922a,
-  600: #b88425,
-  700: #9a6f1f,
-  800: #7c5a19,
-  900: #5e4413,
-  contrast: (
-    50: rgba(black, 0.87),
-    100: rgba(black, 0.87),
-    200: rgba(black, 0.87),
-    300: rgba(black, 0.87),
-    400: white,
-    500: white,
-    600: white,
-    700: white,
-    800: white,
-    900: white,
-  ),
-);
-
-$primary: mat.define-palette($bofa-navy, 500);
-$accent: mat.define-palette($bofa-gold, 500);
-$warn: mat.define-palette(mat.$red-palette);
-
-$theme: mat.define-light-theme(
+$bofa-theme: mat.define-theme(
   (
     color: (
-      primary: $primary,
-      accent: $accent,
-      warn: $warn,
+      theme-type: light,
+      primary: mat.$blue-palette,
+      tertiary: mat.$yellow-palette,
     ),
   )
 );
 
-@include mat.all-component-themes($theme);
+html {
+  @include mat.all-component-themes($bofa-theme);
+  @include mat.all-component-typographies();
+}
