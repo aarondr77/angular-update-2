@@ -3,17 +3,21 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { provideMockStore } from '@ngrx/store/testing';
 import { axe } from 'jest-axe';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
-import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
-import { MatLegacyChipsModule as MatChipsModule } from '@angular/material/legacy-chips';
-import { MatLegacyProgressSpinnerModule as MatProgressSpinnerModule } from '@angular/material/legacy-progress-spinner';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ordersAdapter, initialState } from '../store/orders/orders.reducer';
 import { Order } from '../models';
 import { CurrencyCompactPipe } from '../shared/pipes/currency-compact.pipe';
 import { DashboardComponent } from './dashboard.component';
 
-const emptyOrders = ordersAdapter.setAll([] as Order[], { ...initialState, loaded: true });
+const emptyOrders = ordersAdapter.setAll([] as Order[], {
+  ...initialState,
+  loaded: true,
+  loading: true,
+});
 
 describe('DashboardComponent a11y', () => {
   let fixture: ComponentFixture<DashboardComponent>;

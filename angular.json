@@ -91,10 +91,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "trade-operations-console:build:production"
+              "buildTarget": "trade-operations-console:build:production"
             },
             "development": {
-              "browserTarget": "trade-operations-console:build:development"
+              "buildTarget": "trade-operations-console:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -102,7 +102,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "trade-operations-console:build"
+            "buildTarget": "trade-operations-console:build"
           }
         },
         "lint": {
