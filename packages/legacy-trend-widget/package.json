@@ -4,7 +4,7 @@
   "description": "Legacy execution trend widget capped at Angular 16 — C4 migration specimen",
   "main": "src/public-api.ts",
   "peerDependencies": {
-    "@angular/common": ">=14.0.0 <=16.0.0",
-    "@angular/core": ">=14.0.0 <=16.0.0"
+    "@angular/common": ">=14.0.0",
+    "@angular/core": ">=14.0.0"
   }
 }
