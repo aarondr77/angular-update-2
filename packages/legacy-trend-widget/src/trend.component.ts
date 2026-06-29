@@ -1,8 +1,8 @@
 import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
-  selector: 'bofa-legacy-trend',
-  template: `
+    selector: 'bofa-legacy-trend',
+    template: `
     <svg
       [attr.width]="width"
       [attr.height]="height"
@@ -26,8 +26,8 @@ import { Component, Input, OnChanges } from '@angular/core';
       />
     </svg>
   `,
-  styles: [
-    `
+    styles: [
+        `
       :host {
         display: block;
       }
@@ -36,7 +36,8 @@ import { Component, Input, OnChanges } from '@angular/core';
         border-radius: 4px;
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class LegacyTrendComponent implements OnChanges {
   @Input() data: number[] = [];
