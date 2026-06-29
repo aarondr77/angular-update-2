@@ -4,5 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: '<router-outlet></router-outlet>',
   styles: [],
+  standalone: false,
 })
 export class AppComponent {}

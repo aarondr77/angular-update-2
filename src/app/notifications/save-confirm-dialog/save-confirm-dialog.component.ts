@@ -13,6 +13,7 @@ import { MatDialogRef } from '@angular/material/dialog';
       <button mat-raised-button color="primary" (click)="confirm()" cdkFocusInitial>Confirm</button>
     </mat-dialog-actions>
   `,
+  standalone: false,
 })
 export class SaveConfirmDialogComponent {
   constructor(private dialogRef: MatDialogRef<SaveConfirmDialogComponent>) {}

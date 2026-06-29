@@ -9,6 +9,7 @@ import { selectAuthError, selectAuthLoading } from '../../store/auth/auth.select
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
+  standalone: false,
 })
 export class LoginComponent {
   form: FormGroup;
