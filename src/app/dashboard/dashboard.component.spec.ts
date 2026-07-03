@@ -106,10 +106,10 @@ describe('DashboardComponent — characterization baseline (snapshot)', () => {
     expect(userLabel?.textContent?.trim()).toBe('Test Analyst');
   });
 
-  it('renders mat-chip-list for status column', () => {
+  it('renders mat-chip-set for status column', () => {
     const el: HTMLElement = fixture.nativeElement;
-    const chipLists = el.querySelectorAll('mat-chip-list');
-    expect(chipLists.length).toBeGreaterThan(0);
+    const chipSets = el.querySelectorAll('mat-chip-set');
+    expect(chipSets.length).toBeGreaterThan(0);
   });
 
   it('matches DOM snapshot', () => {
