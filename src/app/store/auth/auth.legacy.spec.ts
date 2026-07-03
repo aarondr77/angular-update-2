@@ -7,7 +7,7 @@ describe('TestBed.get legacy API', () => {
     TestBed.configureTestingModule({
       providers: [OAuthService],
     });
-    const service = TestBed.get(OAuthService);
+    const service = TestBed.inject(OAuthService);
     expect(service).toBeTruthy();
   });
 });
