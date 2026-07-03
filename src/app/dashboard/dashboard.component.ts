@@ -14,7 +14,9 @@ import { selectAuthUser } from '../store/auth/auth.selectors';
 import * as AuthActions from '../store/auth/auth.actions';
 
 @Component({
+  standalone: false,
   selector: 'app-dashboard',
+
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })

@@ -2,6 +2,7 @@ import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'bofa-legacy-trend',
+  standalone: false,
   template: `
     <svg
       [attr.width]="width"

@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
+  standalone: false,
   selector: 'app-save-confirm-dialog',
+
   template: `
     <h2 mat-dialog-title>Save preferences?</h2>
     <mat-dialog-content>
