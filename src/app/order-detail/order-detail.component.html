@@ -1,5 +1,5 @@
 <div class="order-detail-page" data-testid="order-detail-page" *ngIf="order$ | async as order">
-  <div class="order-detail-header" fxLayout="row" fxLayoutAlign="space-between center">
+  <div class="order-detail-header">
     <div>
       <button mat-button (click)="goBack()" data-testid="back-btn">
         <mat-icon>arrow_back</mat-icon>
@@ -27,14 +27,14 @@
     </mat-card-header>
   </mat-card>
 
-  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="16px" class="detail-body">
-    <div fxFlex="60" fxFlex.lt-md="100">
+  <div class="detail-body">
+    <div class="detail-main">
       <mat-card class="info-panel">
         <mat-card-header>
           <mat-card-title>Order Overview</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <div fxLayout="row" fxLayoutGap="24px" fxLayoutWrap>
+          <div class="overview-fields">
             <div>
               <p class="label">Notional</p>
               <p class="value">{{ order.notional | currencyCompact }}</p>
@@ -73,7 +73,7 @@
       </mat-card>
     </div>
 
-    <div fxFlex="40" fxFlex.lt-md="100">
+    <div class="detail-sidebar">
       <mat-card class="trend-panel">
         <mat-card-header>
           <mat-card-title>Execution Trend</mat-card-title>

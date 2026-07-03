@@ -5,7 +5,44 @@
 }
 
 .order-detail-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 16px;
+}
+
+.detail-body {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+
+  @media (max-width: 959px) {
+    flex-direction: column;
+  }
+}
+
+.detail-main {
+  flex: 60;
+
+  @media (max-width: 959px) {
+    flex: 1 1 100%;
+  }
+}
+
+.detail-sidebar {
+  flex: 40;
+
+  @media (max-width: 959px) {
+    flex: 1 1 100%;
+  }
+}
+
+.overview-fields {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .order-detail-header-card {

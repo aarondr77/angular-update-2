@@ -20,8 +20,6 @@
           <div
             *ngFor="let pref of preferences$ | async"
             class="pref-row"
-            fxLayout="row"
-            fxLayoutAlign="space-between center"
           >
             <mat-slide-toggle
               [id]="'toggle-' + pref.id"
