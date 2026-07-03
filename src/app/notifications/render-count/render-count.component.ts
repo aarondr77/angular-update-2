@@ -5,7 +5,9 @@ import { NotificationBatchService } from '../notification-batch.service';
  * C3 specimen component — no unit tests at baseline.
  */
 @Component({
+  standalone: false,
   selector: 'app-render-count',
+
   template: `
     <section
       class="render-count-panel"

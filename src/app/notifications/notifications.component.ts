@@ -11,7 +11,9 @@ import {
 import { SaveConfirmDialogComponent } from './save-confirm-dialog/save-confirm-dialog.component';
 
 @Component({
+  standalone: false,
   selector: 'app-notifications',
+
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.scss'],
 })

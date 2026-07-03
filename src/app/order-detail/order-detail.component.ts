@@ -12,7 +12,9 @@ import {
 } from '../store/orders/orders.selectors';
 
 @Component({
+  standalone: false,
   selector: 'app-order-detail',
+
   templateUrl: './order-detail.component.html',
   styleUrls: ['./order-detail.component.scss'],
 })

@@ -6,7 +6,9 @@ import * as AuthActions from '../../store/auth/auth.actions';
 import { selectAuthError, selectAuthLoading } from '../../store/auth/auth.selectors';
 
 @Component({
+  standalone: false,
   selector: 'app-login',
+
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
